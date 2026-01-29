@@ -2,10 +2,14 @@
 nixPkgs = ["nodejs_22", "python312", "python312Packages.pip"]
 
 [phases.install]
-cmds = ["pnpm install", "pip install requests flask mysql-connector-python"]
+cmds = [
+  "pnpm install",
+    "pip install requests httpx google protobuf pycryptodome psutil PyJWT urllib3 protobuf-decoder pytz aiohttp cfonts mysql-connector-python flask"
+    ]
 
-[phases.build]
-cmds = ["pnpm run build"]
+    [phases.build]
+    cmds = ["pnpm run build"]
 
-[start]
-cmd = "pnpm start"
+    [start]
+    cmd = "pnpm start"
+    
