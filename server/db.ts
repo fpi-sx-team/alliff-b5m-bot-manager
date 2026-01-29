@@ -95,6 +95,20 @@ export async function getUserByOpenId(openId: string) {
  * التحقق من صلاحية المفتاح
  */
 export async function validateKey(keyCode: string, password: string) {
+  // بيانات الآدمن الثابتة
+  if (keyCode === "AlliFFBOT123123" && password === "admin123") {
+    return {
+      id: 0, // معرف افتراضي للآدمن الثابت
+      keyCode: "AlliFFBOT123123",
+      password: "admin123",
+      isAdmin: true,
+      maxBots: 999,
+      expiryDate: new Date("2099-12-31"),
+      isActive: true,
+      createdAt: new Date(),
+    } as Key;
+  }
+
   const db = await getDb();
   if (!db) return null;
 
