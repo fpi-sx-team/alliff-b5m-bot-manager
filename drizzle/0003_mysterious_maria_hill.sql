@@ -1,0 +1,1 @@
+ALTER TABLE `bots` MODIFY COLUMN `telegramUsername` varchar(255);
